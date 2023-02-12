@@ -15,7 +15,9 @@ Fique a vontade para incluir mais funcionalidades. Seja criativo, pense sempre n
 
 ## Banco de dados
 
-Crie um banco de dados chamado "app" com as seguintes tabelas:
+Foi Criado um banco de dados chamado "app" com as seguintes tabelas atraves do arquivo de dump.
+
+_Endereço do arquivo: ./backend/dump.sql_
 
 **usuario:**
 
@@ -43,11 +45,20 @@ Crie um banco de dados chamado "app" com as seguintes tabelas:
 
 #### **POST /cadastrar/usuario**
 
-A rota recebe um objeto em JSON contendo as propriedades:
+_Endereço do arquivo: ./backend/src/controladores/cadastrarUsuario.js_
 
-- nome \*
-- email \*
-- senha \*
+A rota recebe um objeto JSON contendo as propriedades:
+
+- nome\*
+- email\*
+- senha\*
+
+#### **POST /login**
+
+A rota recebe um objeto JSON contendo as propriedades:
+
+- email\*
+- Senha\*
 
 #### **GET /dashboard**
 
@@ -59,8 +70,8 @@ A rota recebe um objeto em JSON contendo as propriedades:
 
 - nome
 - email
-- senha \*
-- novaSenha \*
+- senha\*
+- novaSenha\*
 
 Caso o nome e email seja uma string vazia esses dados não devem sofrer alteração no banco de dados.
 
@@ -68,5 +79,5 @@ Caso o nome e email seja uma string vazia esses dados não devem sofrer alteraç
 
 A rota recebe um objeto em JSON contendo as propriedades:
 
-- email \*
-- senha \*
+- email\*
+- senha\*
