@@ -23,7 +23,7 @@ const login = async (req, res) => {
     }
 
     const tokenJWT = await jwt.sign(
-      { id: usuario[0].id },
+      { id: usuario[0].usuario_id },
       process.env.SENHA_JWT
     );
 
