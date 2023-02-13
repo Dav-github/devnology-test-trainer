@@ -23,6 +23,8 @@ const verificadorLogin = async (req, res, next) => {
       return res.status(403).json("Não autorizado!");
     }
 
+    req.headers.tokenJWT = tokenJWT;
+
     next();
   } catch (error) {
     return res.status(500).json("Erro interno");
