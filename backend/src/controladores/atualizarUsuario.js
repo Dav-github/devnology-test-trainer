@@ -6,12 +6,12 @@ const atualizarUsuario = async (req, res) => {
   const { nome, email, senha, novaSenha } = req.body;
   let numeroDeCamposAlterados = 0;
 
-  if (nome || email || novaSenha) {
+  if (nome.trim() || email.trim() || novaSenha.trim()) {
     numeroDeCamposAlterados = 1;
   }
 
   try {
-    if (!senha) {
+    if (!senha.trim()) {
       return res.status(400).json("Informe a senha");
     }
 
@@ -53,7 +53,6 @@ const atualizarUsuario = async (req, res) => {
 
     return res.json(queryAtualizarUsuario);
   } catch (error) {
-    console.log(error);
     return res.status(500).json("Erro interno");
   }
 };

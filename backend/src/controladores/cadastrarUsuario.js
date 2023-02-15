@@ -5,7 +5,7 @@ const cadastrarUsuario = async (req, res) => {
   const { nome, email, senha } = req.body;
 
   try {
-    if (!nome || !email || !senha) {
+    if (!nome.trim() || !email.trim() || !senha.trim()) {
       return res.status(400).json("informe todos os campos");
     }
 

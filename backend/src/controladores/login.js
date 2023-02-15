@@ -6,7 +6,7 @@ const login = async (req, res) => {
   const { email, senha } = req.body;
 
   try {
-    if (!email || !senha) {
+    if (!email.trim() || !senha.trim()) {
       return res.status(400).json("Todos os campos são obrigatório");
     }
 
@@ -36,7 +36,6 @@ const login = async (req, res) => {
 
     return res.status(200).json(retornoUsuarioLogado);
   } catch (error) {
-    console.log(error);
     return res.status(500).json("Erro interno");
   }
 };
