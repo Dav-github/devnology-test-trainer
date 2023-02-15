@@ -58,7 +58,7 @@ Rota padrão, após o login, aqui devemos listar os blogs cadastrados pelo usuar
 
 #### **put /usuario**
 
-A rota recebe um objeto em JSON contendo as propriedades:
+A rota recebe um objeto JSON contendo as propriedades:
 
 - nome
 - email
@@ -69,8 +69,17 @@ Existe uma validação na rota exigindo que ao menos um dos campos (nome,email,n
 
 #### **delete /usuario**
 
-A rota recebe um objeto em JSON contendo as propriedades
+A rota recebe um objeto JSON contendo as propriedades
 
 - senha\*
 
 A rota apaga todos os dados inclusive os blogs cadastrados.
+
+#### **post /blog**
+
+A rota recebe um objeto JSON contendo as propriedades
+
+- url\*
+- titulo\*
+
+A rota pode cadastrar blogs do usuario, o retorno vem do /dashboard

@@ -6,12 +6,12 @@ const atualizarUsuario = async (req, res) => {
   const { nome, email, senha, novaSenha } = req.body;
   let numeroDeCamposAlterados = 0;
 
-  if (nome.trim() || email.trim() || novaSenha.trim()) {
+  if (nome || email || novaSenha) {
     numeroDeCamposAlterados = 1;
   }
 
   try {
-    if (!senha.trim()) {
+    if (!senha) {
       return res.status(400).json("Informe a senha");
     }
 

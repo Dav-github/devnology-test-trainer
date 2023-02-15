@@ -7,7 +7,7 @@ const deletarUsuario = async (req, res) => {
 
   try {
     // console.log(req.headers.tokenJWT);
-    if (!senha.trim()) {
+    if (!senha) {
       return res.status(400).json("Informe a senha!");
     }
 
@@ -19,7 +19,6 @@ const deletarUsuario = async (req, res) => {
       .where("usuario_id", tokenJWT.id);
 
     const verificarSenhaCorreta = await bcrypt.compare(senha, usuario[0].senha);
-    console.log(verificarSenhaCorreta);
 
     if (!verificarSenhaCorreta) {
       return res.status(400).json("Senha incorreta!");
