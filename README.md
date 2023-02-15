@@ -37,9 +37,7 @@ _Endereço do arquivo: ./backend/dump.sql_
 
 ## Rotas
 
-#### **POST /cadastrar/usuario**
-
-_Endereço do arquivo: ./backend/src/controladores/cadastrarUsuario.js_
+#### **POST /usuario**
 
 A rota recebe um objeto JSON contendo as propriedades:
 
@@ -48,8 +46,6 @@ A rota recebe um objeto JSON contendo as propriedades:
 - senha\*
 
 #### **POST /login**
-
-_Endereço do arquivo: ./backend/src/controladores/login.js_
 
 A rota recebe um objeto JSON contendo as propriedades:
 
@@ -60,7 +56,7 @@ A rota recebe um objeto JSON contendo as propriedades:
 
 Rota padrão, após o login, aqui devemos listar os blogs cadastrados pelo usuario.
 
-#### **POST /atualizar/usuario**
+#### **put /usuario**
 
 A rota recebe um objeto em JSON contendo as propriedades:
 
@@ -71,8 +67,10 @@ A rota recebe um objeto em JSON contendo as propriedades:
 
 Existe uma validação na rota exigindo que ao menos um dos campos (nome,email,novaSenha) sejam preenchidos. caso o usuario mude apenas um dos campos, os outros continuaram com os mesmos dados ja fornecidos no momento do cadastro.
 
-#### **POST /deletar/usuario**
+#### **delete /usuario**
 
 A rota recebe um objeto em JSON contendo as propriedades
 
 - senha\*
+
+A rota apaga todos os dados inclusive os blogs cadastrados.
