@@ -33,12 +33,6 @@ _Endereço do arquivo: ./backend/dump.sql_
 - titulo (string)
 - id_usuario (foreign key table usuario(id))
 
-**favoritos: escopo extra**
-
-- id (primary key)
-- id_usuario (foreign key table usuario(id))
-- id_blog (foreign key table id_blog(id))
-
 ---
 
 ## Rotas
@@ -73,13 +67,12 @@ A rota recebe um objeto em JSON contendo as propriedades:
 - nome
 - email
 - senha\*
-- novaSenha\*
+- novaSenha
 
-Caso o nome e email seja uma string vazia esses dados não devem sofrer alteração no banco de dados.
+Existe uma validação na rota exigindo que ao menos um dos campos (nome,email,novaSenha) sejam preenchidos. caso o usuario mude apenas um dos campos, os outros continuaram com os mesmos dados ja fornecidos no momento do cadastro.
 
 #### **POST /deletar/usuario**
 
-A rota recebe um objeto em JSON contendo as propriedades:
+A rota recebe um objeto em JSON contendo as propriedades
 
-- email\*
 - senha\*
