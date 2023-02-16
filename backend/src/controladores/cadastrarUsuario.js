@@ -2,11 +2,15 @@ const knex = require("../configuracoes/conexao");
 const bcrypt = require("bcrypt");
 
 const cadastrarUsuario = async (req, res) => {
-  const { nome, email, senha } = req.body;
+  const { nome, email, senha, confirmarSenha } = req.body;
 
   try {
-    if (!nome || !email || !senha) {
+    if (!nome || !email || !senha || !confirmarSenha) {
       return res.status(400).json("informe todos os campos");
+    }
+
+    if (senha !== confirmarSenha) {
+      return res.status(400).json("As senhas são diferentes");
     }
 
     const verificarEmailRepetido = await knex("usuarios").where("email", email);
