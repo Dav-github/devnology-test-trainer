@@ -46,12 +46,18 @@ A rota recebe um objeto JSON contendo as propriedades:
 - senha\*
 - confirmarSenha\*
 
+Essa rota cadastra um novo usuario retornando um 201 em caso de sucesso.
+
 #### **POST /login**
 
 A rota recebe um objeto JSON contendo as propriedades:
 
 - email\*
 - Senha\*
+
+#### **Rotas protegidas**
+
+As rotas abaixos são acessadas passando pelo intermediario **_verificadorLogin_**, ele verifica se existe um headers no formato Bearer token.
 
 #### **GET /dashboard**
 
