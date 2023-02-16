@@ -62,6 +62,8 @@ As rotas abaixos são acessadas passando pelo intermediario **_verificadorLogin_
 #### **GET /dashboard**
 
 Rota padrão, após o login, aqui devemos listar os blogs cadastrados pelo usuario.
+Podemos pesquisar um blog pelo nome, ex: /dashboard/titulo,
+usei o operador ilike para não ser case sensitive.
 
 #### **put /usuario**
 
