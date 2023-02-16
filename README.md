@@ -44,6 +44,7 @@ A rota recebe um objeto JSON contendo as propriedades:
 - nome\*
 - email\*
 - senha\*
+- confirmarSenha\*
 
 #### **POST /login**
 
