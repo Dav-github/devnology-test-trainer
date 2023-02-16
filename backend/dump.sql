@@ -9,7 +9,7 @@ CREATE TABLE usuarios (
 
 CREATE TABLE blog (
 	blog_id serial PRIMARY KEY,
-	url VARCHAR UNIQUE NOT NULL,
+	url VARCHAR NOT NULL,
 	titulo VARCHAR NOT NULL,
 	referencia_usuario INTEGER REFERENCES usuarios(usuario_id) 
 );
