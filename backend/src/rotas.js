@@ -14,6 +14,7 @@ app.post("/login", login);
 app.use(verificadorLogin);
 
 app.get("/dashboard", dashboard);
+app.get("/dashboard/:titulo", dashboard);
 app.put("/usuario", atualizarUsuario);
 app.delete("/usuario", deletarUsuario);
 
